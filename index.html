@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#febbbb" />
+  <title>Bloom — Your space to get things done</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="landing-body">
+  <main class="landing-shell">
+    <nav class="landing-nav"><a class="brand" href="/">bloom<span>.</span></a><a class="nav-login" href="login.html">Log in</a></nav>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A FRESH START, EVERY DAY</p>
+        <h1>Your space to<br><span>get things done.</span></h1>
+        <p class="hero-subtitle">A calm place to sign in, get settled, and focus on what matters to you.</p>
+        <div class="hero-actions"><a class="hero-button" href="login.html">Get started <span aria-hidden="true">↗</span></a><span class="hero-note">Simple. Personal. Yours.</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-sun"></div><div class="art-card"><span class="art-spark">✳</span><span class="art-card-title">A little progress<br>goes a long way.</span><span class="art-card-foot">TODAY IS YOURS</span></div><div class="art-dot dot-one"></div><div class="art-dot dot-two"></div></div>
+    </section>
+    <footer class="landing-footer"><span>© 2026 bloom</span><span class="api-status"><i id="api-dot"></i><span id="api-message">Checking app services…</span></span><a href="login.html">Go to login <span aria-hidden="true">→</span></a></footer>
+  </main>
+  <script>
+    fetch('http://127.0.0.1:5000/api/health').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(() => { document.querySelector('#api-dot').classList.add('online'); document.querySelector('#api-message').textContent = 'App services online'; }).catch(() => { document.querySelector('#api-message').textContent = 'App API is offline'; });
+  </script>
+</body>
+</html>

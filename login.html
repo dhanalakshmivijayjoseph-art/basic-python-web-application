@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#febbbb" />
+  <title>Welcome back</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="auth-card" aria-labelledby="title">
+      <div class="intro">
+        <p class="eyebrow">YOUR SPACE, YOUR PACE</p>
+        <h1 id="title">Welcome Back!</h1>
+        <p class="subtitle" id="subtitle">Please login to your account</p>
+      </div>
+      <form id="auth-form" novalidate>
+        <label class="field name-field" for="name" hidden>
+          <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" minlength="2" maxlength="80" />
+        </label>
+        <label class="field" for="email">
+          <input id="email" name="email" type="email" placeholder="Email ID" autocomplete="email" required />
+          <img src="public/email.svg" alt="" />
+        </label>
+        <label class="field password-field" for="password">
+          <img class="leading-icon" src="public/lock.svg" alt="" />
+          <input id="password" name="password" type="password" placeholder="Password" autocomplete="current-password" required minlength="6" />
+          <button class="icon-button" id="toggle-password" type="button" aria-label="Show password" title="Show password">
+            <img src="public/eye-off.svg" alt="" />
+          </button>
+        </label>
+        <div class="form-meta"><button class="text-button" id="forgot" type="button">Forgot password?</button></div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+        <button class="submit-button" id="submit" type="submit">Login</button>
+      </form>
+      <div class="signed-in" id="signed-in" hidden>
+        <p class="signed-in-copy" id="signed-in-copy"></p>
+        <button class="submit-button" id="logout" type="button">Log out</button>
+      </div>
+      <p class="signup-prompt"><span id="prompt">Don’t have an account?</span> <button class="signup-link" id="switch-mode" type="button">Sign up</button></p>
+    </section>
+    <p class="footer-note">A little more room to get things done.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
